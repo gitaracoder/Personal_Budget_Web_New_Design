@@ -57,27 +57,97 @@
 
 			<div class="container">
 				<div class="jumbotron">
-					<h2><i class="demo-icon icon-list"></i> Menu główne</h2>
-					<h4 class="mb-5 text-center" >Witaj "nazwa użytkownika"! Co teraz robimy?</h4>
-					<div class="row">
-						<div class="col-md-6">
-							<button type="button" class="btn mb-5 btn-block btn-outline-primary btn-lg"><i class="demo-icon icon-download"></i> Dodaj przychód</button>
+					<h2><i class="demo-icon icon-book-open"></i> Przeglądaj bilans</h2>
+					<form>
+						<div class="row mb-3">
+							<div class="col-md-6">
+								<p>Wybierz okres</p>
+								<select class="custom-select">
+									<option value="w">Bieżący miesiąc</option>
+									<option value="w">Poprzedni miesiąc</option>
+									<option value="w">Bieżący rok</option>
+									<option value="w">Niestandardowy</option>
+							</select>
+							</div>
 						</div>
-						<div class="col-md-6">
-							<button type="button" class="btn mb-5 btn-block btn-outline-primary btn-lg"><i class="demo-icon icon-upload"></i> Dodaj wydatek</button>
+						<div class="row">
+							<div class="col-md-6">
+								<p class="font-weight-bold">Przychody</p>
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th scope="col">#</th>
+											<th scope="col">Kategoria</th>
+											<th scope="col">Kwota</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th scope="row">1</th>
+											<td>Wynagrodzenie</td>
+											<td>5000</td>
+										</tr>
+										<tr>
+											<th scope="row">2</th>
+											<td>Odsetki bankowe</td>
+											<td>500</td>
+										</tr>
+										<tr>
+											<th scope="row">3</th>
+											<td>Sprzedaż Allegro</td>
+											<td>150</td>
+										</tr>
+									</tbody>
+								</table>
+								<p class="font-weight-bold">Suma przychodów: 5650</p>
+								
+							</div>
+							<div class="col-md-6">
+								<p class="font-weight-bold">Wydatki</p>
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th scope="col">#</th>
+											<th scope="col">Kategoria</th>
+											<th scope="col">Kwota</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th scope="row">1</th>
+											<td>Mieszkanie</td>
+											<td>1500</td>
+										</tr>
+										<tr>
+											<th scope="row">2</th>
+											<td>Jedzenie</td>
+											<td>100</td>
+										</tr>
+										<tr>
+											<th scope="row">3</th>
+											<td>Transport</td>
+											<td>300</td>
+										</tr>
+									</tbody>
+								</table>
+								<p class="font-weight-bold">Suma wydatków: 1900</p>
+								
+							</div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6">
-							<button type="button" class="btn mb-5 btn-block btn-outline-primary btn-lg"><i class="demo-icon icon-book-open"></i> Przeglądaj bilans</button>
+						<div class="row">
+							<div class="col-md-12 mt-3">
+								<div id="chartContainer" style="height: 370px; margin: 0px auto; margin-bottom: 30px; margin-top: 20px;"></div>
+							</div>
 						</div>
-						<div class="col-md-6">
-							<button type="button" class="btn mb-5 btn-block btn-outline-primary btn-lg"><i class="demo-icon icon-cog-alt"></i> Ustawienia</button>
+						<div class="row">
+							<div class="col-md-12 mt-3">
+								<h2 class="text-center text-success">Gratulacje. Świetnie zarządzasz finansami!</h2>
+							</div>
 						</div>
-					</div>
+					</form>
 					<div class="row">
 						<div class="col-md-12">
-							<button type="button" class="btn mb-4 btn-block btn-outline-danger btn-lg"><i class="demo-icon icon-logout"></i> Wyloguj się</button>
+							<button type="button" class="btn mb-3 mt-3 btn-block btn-outline-primary btn-lg"><i class="demo-icon icon-list"></i> Menu główne</button>
 						</div>
 					</div>
 				</div>
@@ -93,7 +163,11 @@
 		
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 		
+		<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>  
+		<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+		
 		<script src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="chart.js"></script>
 	  
 	</body>
 </html>
