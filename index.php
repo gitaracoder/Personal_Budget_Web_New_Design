@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	
 		<title>Personal Budget - Aplikacja do zarządzania Budżetem Osobistym</title>
 		<meta name="description" content="Aplikacja do zarządzania budżetem osobistym. Rozpocznij kontrolę nad wydatkami, zacznij oszczędzać." />
@@ -14,7 +14,7 @@
   
 	<body>
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-6">
-			<a class="navbar-brand" href="#"><i class="demo-icon icon-money"></i> Personal Budget</a>
+			<a class="navbar-brand" href="index.php"><i class="demo-icon icon-money"></i> Personal Budget</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -22,21 +22,13 @@
 			<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 				<ul class="navbar-nav mr-auto">
 				  <li class="nav-item active">
-					<a class="nav-link" href="#"><i class="demo-icon icon-download"></i> Przychód</a>
+					<a class="nav-link" href="login.php">Zaloguj</a>
 				  </li>
 				  <li class="nav-item active">
-					<a class="nav-link" href="#"><i class="demo-icon icon-upload"></i> Wydatek</a>
+					<a class="nav-link" href="register.php">Rejestracja</a>
 				  </li>
 				  <li class="nav-item active">
-					<a class="nav-link" href="#"><i class="demo-icon icon-book-open"></i> Bilans</a>
-				  </li>
-				  <li class="nav-item active">
-					<a class="nav-link" href="#"><i class="demo-icon icon-cog-alt"></i> Ustawienia</a>
-				  </li>
-				</ul>
-				<ul class="navbar-nav ml-auto">
-				  <li class="nav-item active">
-					<a class="nav-link text-danger" href="#"><i class="demo-icon icon-logout"></i> Wyloguj</a>
+					<a class="nav-link" href="#">Kontakt</a>
 				  </li>
 				</ul>
 			</div>
@@ -56,28 +48,29 @@
 			</div>
 
 			<div class="container">
+    
+				<div class="row mb-4">
+					<div class="col-sm-12">
+						<h2>Dlaczego warto prowadzić budżet domowy?</h2>
+						<p class="text-justify">Kontrola. W zarządzaniu domowymi finansami chodzi przede wszystkim o to, by mieć kontrolę. Kontrolę nad własną sytuacją finansową. Tak aby mieć realny wpływ na to ile, kiedy i na co wydajemy – zamiast dostosowywać się do tego ile zostaje nam w portfelu na koniec miesiąca. I tu przydaje się nam domowy budżet.</p>
+
+						<p class="text-justify">Budżet domowy to pierwszy krok do przejęcia kontroli nad własnymi finansami. Daje on wiedzę o tym, na co wydajemy pieniądze i jest jednocześnie narzędziem do tego, aby mądrze planować przyszłe wydatki.</p>
+					</div>
+				</div>
+	
 				<div class="jumbotron">
-					<h2><i class="demo-icon icon-list"></i> Menu główne</h2>
-					<h4 class="mb-5 text-center" >Witaj "nazwa użytkownika"! Co teraz robimy?</h4>
 					<div class="row">
 						<div class="col-md-6">
-							<button type="button" class="btn mb-5 btn-block btn-outline-primary btn-lg"><i class="demo-icon icon-download"></i> Dodaj przychód</button>
+						
+							<h2><i class="demo-icon icon-login"></i> Zaloguj się</h2>
+							<p>Jeżeli posiadasz już konto pamiętaj by zapisywać wszystkie przychody i wydatki, by jak najdokładniej planować swój budżet.</p>
+							<p><a class="btn-lg btn btn-outline-success" href="login.php" role="button">Zaloguj</a></p> 
 						</div>
+						
 						<div class="col-md-6">
-							<button type="button" class="btn mb-5 btn-block btn-outline-primary btn-lg"><i class="demo-icon icon-upload"></i> Dodaj wydatek</button>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6">
-							<button type="button" class="btn mb-5 btn-block btn-outline-primary btn-lg"><i class="demo-icon icon-book-open"></i> Przeglądaj bilans</button>
-						</div>
-						<div class="col-md-6">
-							<button type="button" class="btn mb-5 btn-block btn-outline-primary btn-lg"><i class="demo-icon icon-cog-alt"></i> Ustawienia</button>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<button type="button" class="btn mb-4 btn-block btn-outline-danger btn-lg"><i class="demo-icon icon-logout"></i> Wyloguj się</button>
+							<h2><i class="demo-icon icon-user-plus"></i> Zarejestruj się</h2>
+							<p>Jeżeli nie posiadasz jeszcze konta, załóż je już teaz i rozpocznij kontrolę nad swoim budżerem, to nic nie kosztuje, możesz jedynie zyskać! </p>
+							<p><a class="btn-lg btn btn-outline-primary" href="register.php" role="button">Zarejestruj</a></p>
 						</div>
 					</div>
 				</div>

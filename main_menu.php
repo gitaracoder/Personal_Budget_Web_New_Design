@@ -1,8 +1,18 @@
+<?php
+	session_start();
+	
+	if(!isset($_SESSION['zalogowany']))
+	{
+		header('Location: index.php');
+		exit();
+	}
+?>
+
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	
 		<title>Personal Budget - Aplikacja do zarządzania Budżetem Osobistym</title>
 		<meta name="description" content="Aplikacja do zarządzania budżetem osobistym. Rozpocznij kontrolę nad wydatkami, zacznij oszczędzać." />
@@ -14,7 +24,7 @@
   
 	<body>
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-6">
-			<a class="navbar-brand" href="#"><i class="demo-icon icon-money"></i> Personal Budget</a>
+			<a class="navbar-brand" href="main_menu.php"><i class="demo-icon icon-money"></i> Personal Budget</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -22,13 +32,21 @@
 			<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 				<ul class="navbar-nav mr-auto">
 				  <li class="nav-item active">
-					<a class="nav-link" href="#">Zaloguj</a>
+					<a class="nav-link" href="add_income.php"><i class="demo-icon icon-download"></i> Przychód</a>
 				  </li>
 				  <li class="nav-item active">
-					<a class="nav-link" href="#">Rejestracja</a>
+					<a class="nav-link" href="add_expense.php"><i class="demo-icon icon-upload"></i> Wydatek</a>
 				  </li>
 				  <li class="nav-item active">
-					<a class="nav-link" href="#">Kontakt</a>
+					<a class="nav-link" href="balance.php"><i class="demo-icon icon-book-open"></i> Bilans</a>
+				  </li>
+				  <li class="nav-item active">
+					<a class="nav-link" href="#"><i class="demo-icon icon-cog-alt"></i> Ustawienia</a>
+				  </li>
+				</ul>
+				<ul class="navbar-nav ml-auto">
+				  <li class="nav-item active">
+					<a class="nav-link text-danger" href="logout.php"><i class="demo-icon icon-logout"></i> Wyloguj</a>
 				  </li>
 				</ul>
 			</div>
@@ -49,21 +67,30 @@
 
 			<div class="container">
 				<div class="jumbotron">
+					<h2><i class="demo-icon icon-list"></i> Menu główne</h2>
+					<?php
+						echo '<h4 class="mb-5 text-center" >Witaj '.$_SESSION['name'].'! Co teraz robimy?</h4>';
+						echo $_SESSION['message'];
+					?>
+					<div class="row">
+						<div class="col-md-6">
+							<a role="button" href="add_income.php" class="btn mb-5 btn-block btn-outline-primary btn-lg"><i class="demo-icon icon-download"></i> Dodaj przychód</a>
+						</div>
+						<div class="col-md-6">
+							<a role="button" href="add_expense.php" class="btn mb-5 btn-block btn-outline-primary btn-lg"><i class="demo-icon icon-upload"></i> Dodaj wydatek</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<a <a role="button" href="balance.php" class="btn mb-5 btn-block btn-outline-primary btn-lg"><i class="demo-icon icon-book-open"></i> Przeglądaj bilans</a>
+						</div>
+						<div class="col-md-6">
+							<button type="button" class="btn mb-5 btn-block btn-outline-primary btn-lg"><i class="demo-icon icon-cog-alt"></i> Ustawienia</button>
+						</div>
+					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<h2><i class="demo-icon icon-login"></i> Logowanie</h2>
-							<form>
-								<div class="form-group">
-									<label for="inputUserEmailLogIn">Adres e-mail</label>
-									<input type="email" class="form-control" id="inputUserEmailLogIn" aria-describedby="emailHelp" placeholder="email">
-									<small id="emailHelp" class="form-text text-muted">Dbamy o Twoją prywtność, adres e-mail nie będzie widoczny dla innych.</small>
-								</div>
-								<div class="form-group">
-									<label for="inputUserPasswordLogIn">Hasło</label>
-									<input type="password" class="form-control" id="inputUserPasswordLogIn" placeholder="hasło">
-								</div>
-								<button type="submit" class="btn-lg btn btn-outline-success">Zaloguj</button>
-							</form>
+							<a role="button" href="logout.php" class="btn mb-4 btn-block btn-outline-danger btn-lg"><i class="demo-icon icon-logout"></i> Wyloguj się</a>
 						</div>
 					</div>
 				</div>
